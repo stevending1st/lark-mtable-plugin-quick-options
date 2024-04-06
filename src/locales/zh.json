@@ -1,0 +1,16 @@
+{
+  "title":"快速选项",
+  "select_table": "选择表格",
+  "select_table_placeholder" : "请选择一个表格",
+  "select_field": "选择字段",
+  "select_field_placeholder": "请选择一个字段",
+  "options": "选项",
+  "options_placeholder": "每一行一个选项",
+  "submit_button": "同步选项",
+  "no_table_selected_prompt": "请选择一个表格",
+  "no_field_selected_prompt": "请选择一个字段",
+  "i_know": "我知道了",
+  "update_completion_prompt": "选项更新成功",
+  "delete_item_confirmation": "删除选项确认",
+  "delete_item_confirmation_description": "有如下选项会被删除，如果您在记录中使用该选项，也会被删除，是否继续？"
+}

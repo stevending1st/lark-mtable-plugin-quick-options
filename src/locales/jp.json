@@ -1,0 +1,16 @@
+{
+  "title": "クイックオプション",
+  "select_table": "テーブルの選択",
+  "select_table_placeholder": "テーブルを選んでください",
+  "select_field": "フィールドの選択",
+  "select_field_placeholder": "フィールドを選んでください",
+  "options": "オプション",
+  "options_placeholder": "1 行に 1 つのオプション",
+  "submit_button": "オプションの同期",
+  "no_table_selected_prompt": "テーブルを選んでください",
+  "no_field_selected_prompt": "フィールドを選んでください",
+  "i_know": "わかりました",
+  "update_completion_prompt": "オプションが正常に更新されました",
+  "delete_item_confirmation": "オプションの削除確認",
+  "delete_item_confirmation_description": "以下のオプションが削除されます。これらのオプションを使用しているレコードも一緒に削除されます。続けますか？"
+}

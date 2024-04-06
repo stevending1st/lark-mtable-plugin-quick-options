@@ -1,0 +1,16 @@
+{
+  "title": "Quick Options",
+  "select_table": "Select Table",
+  "select_table_placeholder": "Please select a table",
+  "select_field": "Select Field",
+  "select_field_placeholder": "Please select a field",
+  "options": "Options",
+  "options_placeholder": "One option per line",
+  "submit_button": "Sync Options",
+  "no_table_selected_prompt": "Please select a table",
+  "no_field_selected_prompt": "Please select a field",
+  "i_know": "I Understand",
+  "update_completion_prompt": "Options updated successfully",
+  "delete_item_confirmation": "Delete Option Confirmation",
+  "delete_item_confirmation_description": "The following options will be deleted. If you use this option in records, they will also be deleted. Do you want to continue?"
+}
