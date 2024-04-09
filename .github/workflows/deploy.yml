@@ -1,0 +1,61 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    env:
+      LARK_CHATBOT_HOOK_URL: ${{ secrets.LARK_CHATBOT_HOOK_URL }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm i
+
+      - name: Build website for GitHub
+        run: pnpm build
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          personal_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          force_orphan: true
+
+      - name: Lark notification
+        uses: foxundermoon/feishu-action@v2
+        if: ${{ env.LARK_CHATBOT_HOOK_URL }}
+        with:
+          url: ${{ secrets.LARK_CHATBOT_HOOK_URL }}
+          msg_type: post
+          content: |
+            post:
+              zh_cn:
+                title: Vercel 预览环境
+                content:
+                  - - tag: text
+                      text: Git 仓库：
+                    - tag: a
+                      text: ${{ github.server_url }}/${{ github.repository }}
+                      href: ${{ github.server_url }}/${{ github.repository }}
+                  - - tag: text
+                      text: 代码分支：
+                    - tag: a
+                      text: ${{ github.ref }}
+                      href: ${{ github.server_url }}/${{ github.repository }}/tree/${{ github.ref_name }}
+                  - - tag: text
+                      text: 预览链接：
+                    - tag: a
+                      text: https://stevending.github.io/lark-mtable-plugin-quick-options
+                      href: https://stevending.github.io/lark-mtable-plugin-quick-options
