@@ -45,7 +45,7 @@ jobs:
           content: |
             post:
               zh_cn:
-                title: Vercel 预览环境
+                title: GitHub 部署通知
                 content:
                   - - tag: text
                       text: Git 仓库：
